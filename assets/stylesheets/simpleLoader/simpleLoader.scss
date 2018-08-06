@@ -1,0 +1,367 @@
+/* ==================== General ==================== */
+.loader {
+	@extend .vm;
+	@include size(140px, 140px);
+	> div {
+		@include size(100%, 100%);
+		@include box-sizing(border-box);
+		position: relative;
+		text-align: center;
+	}
+	.circle > div,
+	.ball > div,
+	.cube > div {
+		@extend .inline-middle;
+		@include size(20px, 20px);
+	}
+	.circle > div,
+	.ball > div {
+		@include border-radius(100%);
+	}
+	.circle > div {
+		border-style: solid;
+		border-width: 2px;
+	}
+	.line > div {
+		@extend .inline-middle;
+		@include size(6px, 20px);
+		@include border-radius(3px);
+	}
+}
+/* ==================== END General ==================== */
+
+.loader {
+	/* ==================== Horizontal Ball ==================== */
+	.horizon-ball {
+		> div {
+			margin: 60px 2px;
+			animation: horizon-ball .75s infinite;
+			&:nth-child(1) { animation-delay: .12s; }
+			&:nth-child(2) { animation-delay: .24s; }
+			&:nth-child(3) { animation-delay: .36s; }
+		}
+	}
+	/* ==================== END Horizontal Ball ==================== */
+
+	/* ==================== Grid Ball ==================== */
+	.grid-ball {
+		padding-top: 20px;
+		> div {
+			margin: 8px;
+			animation: grid-ball .72s infinite;
+			&:nth-child(1) { animation-delay: .12s; }
+			&:nth-child(2) { animation-delay: .35s; }
+			&:nth-child(3) { animation-delay: .27s; }
+			&:nth-child(4) { animation-delay: .42s; }
+			&:nth-child(5) { animation-delay: .45s; }
+			&:nth-child(6) { animation-delay: .18s; }
+			&:nth-child(7) { animation-delay: .87s; }
+			&:nth-child(8) { animation-delay: .45s; }
+			&:nth-child(9) { animation-delay: .06s; }
+		}
+	}
+	/* ==================== END Grid Ball ==================== */
+
+	/* ==================== Rotate Circle ==================== */
+	.rotate-circle {
+		> div {
+			margin: 56px auto;
+			border-top-color: transparent!important;
+			animation: rotate-circle .80s infinite linear;
+		}
+	}
+	/* ==================== END Rotate Circle ==================== */
+
+	/* ==================== Rotate Clip Ball ==================== */
+	.rotate-clip-ball {
+		> div {
+			@extend .vm;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			&:nth-child(1) {
+				border-left-color: transparent!important;
+				border-right-color: transparent!important;
+				animation-name: rotate-circle;
+				animation-timing-function: ease;
+			}
+			&:nth-child(2) {
+				@include size(12px, 12px);
+				border-width: 3px;
+				border-color: transparent!important;
+				animation-name: rotate-clip-ball;
+				animation-timing-function: cubic-bezier(.09,.57,.49,.9);
+			}
+		}
+	}
+	/* ==================== END Rotate Clip Ball ==================== */
+
+	/* ==================== Square Spin ==================== */
+	.square-spin {
+		> div {
+			@extend .vm;
+			@include size(40px, 40px);
+			animation: square-spin 3s infinite cubic-bezier(.25,.5,.3,.8);
+		}
+	}
+	/* ==================== END Square Spin ==================== */
+
+	/* ==================== Rotate Clip Circle ==================== */
+	.rotate-clip-circle {
+		> div {
+			@extend .vm;
+			animation-name: rotate-clip-circle;
+			animation-iteration-count: infinite;
+			&:nth-child(1) {
+				@include size(24px, 24px);
+				border-top-color: transparent!important;
+				border-bottom-color: transparent!important;
+				animation-duration: 1s;
+			}
+			&:nth-child(2) {
+				@include size(12px, 12px);
+				border-left-color: transparent!important;
+				border-right-color: transparent!important;
+				animation-duration: .5s;
+				animation-direction: reverse;
+			}
+		}
+	}
+	/* ==================== END Rotate Clip Circle ==================== */
+
+	/* ==================== Rise Ball ==================== */
+	.rise-ball {
+		> div {
+			@include size(16px, 16px);
+			margin: 60px 0;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			&:nth-child(2n-1) { animation-name: rise-ball-odd; }
+			&:nth-child(2n) { animation-name: rise-ball-even; }
+		}
+	}
+	/* ==================== END Rise Ball ==================== */
+
+	/* ==================== Rotate Ball ==================== */
+	.rotate-ball {
+		animation: rotate-ball 1s infinite ease;
+		> div {
+			@extend .vm;
+			@include size(16px, 16px);
+			&:nth-child(odd) {
+				@include border-radius(100%);
+				content: "";
+				opacity: .8;
+			}
+			&:nth-child(1) { left: -50px; }
+			&:nth-child(3) { right: -50px; }
+		}
+	}
+	/* ==================== END Rotate Ball ==================== */
+
+	/* ==================== Transition Cube ==================== */
+	.transition-cube {
+		> div {
+			@include size(12px, 12px);
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			animation: transition-cube 1.6s infinite ease-in-out;
+			&:nth-child(2) { animation-delay: -0.8s; }
+		}
+	}
+	/* ==================== END Transition Cube ==================== */
+
+	/* ==================== Transition Ball ==================== */
+	.transition-ball {
+		> div {
+			@include size(14px, 14px);
+			@extend .vm;
+			animation: transition-ball 1s infinite ease-in-out;
+			&:nth-child(2) { animation-name: transition-ball-opposite; }
+		}
+	}
+	/* ==================== END Transition Ball ==================== */
+
+	/* ==================== Transition Ball Reflect ==================== */
+	.transition-ball-reflect {
+		> div {
+			@include size(14px, 14px);
+			@extend .vm;
+			animation: transition-ball-reflect 1.5s infinite linear;
+			&:nth-child(2) { animation-name: transition-ball-reflect-opposite; }
+		}
+	}
+	/* ==================== END Transition Ball Reflect ==================== */
+
+	/* ==================== Transition Ball Triangle ==================== */
+	.transition-ball-triangle {
+		> div {
+			@include size(16px, 16px);
+			position: absolute;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-in-out;
+			&:nth-child(1) {
+				@include tblr-cust((top, 30px), (left, 60px));
+				animation-name: transition-ball-triangle-path1;
+			}
+			&:nth-child(2) {
+				@include tblr-cust((top, 90px), (left, 20px));
+				animation-name: transition-ball-triangle-path2;
+			}
+			&:nth-child(3) {
+				@include tblr-cust((top, 90px), (left, 100px));
+				animation-name: transition-ball-triangle-path3;
+			}
+		}
+	}
+	/* ==================== END Transition Ball Triangle ==================== */
+
+	/* ==================== Scale Ball ==================== */
+	.scale-ball {
+		position: relative;
+		> div {
+			@include size(60px, 60px);
+			@extend .vm;
+			animation: scale-ball 1s infinite ease-in-out;
+		}
+	}
+	/* ==================== END Scale Ball ==================== */
+
+	/* ==================== Scale Ball Multiple ==================== */
+	.scale-ball-multiple {
+		> div {
+			@include size(60px, 60px);
+			@extend .vm;
+			animation-name: scale-ball-multiple;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			&:nth-child(1) { animation-delay: .4s; }
+			&:nth-child(2) { animation-delay: .2s; }
+		}
+	}
+	/* ==================== END Scale Ball Multiple ==================== */
+
+	/* ==================== Spin Ball ==================== */
+	.spin-ball {
+		> div {
+			@include size(14px, 14px);
+			position: absolute;
+			animation: spin-ball 1s infinite linear;
+			&:nth-child(1) { @include tblr-cust((top, 40px), (left, 63px)); }
+			&:nth-child(2) {
+				@include tblr-cust((top, 46.78px), (right, 46.78px));
+				animation-delay: .1s;
+			}
+			&:nth-child(3) {
+				@include tblr-cust((top, 63px), (right, 40px));
+				animation-delay: .2s;
+			}
+			&:nth-child(4) {
+				@include tblr-cust((bottom, 46.78px), (right, 46.78px));
+				animation-delay: .3s;
+			}
+			&:nth-child(5) {
+				@include tblr-cust((bottom, 40px), (left, 63px));
+				animation-delay: .4s;
+			}
+			&:nth-child(6) {
+				@include tblr-cust((bottom, 46.78px), (left, 46.78px));
+				animation-delay: .5s;
+			}
+			&:nth-child(7) {
+				@include tblr-cust((top, 63px), (left, 40px));
+				animation-delay: .6s;
+			}
+			&:nth-child(8) {
+				@include tblr-cust((top, 46.78px), (left, 46.78px));
+				animation-delay: .7s;
+			}
+		}
+	}
+	/* ==================== END Spin Ball ==================== */
+
+	/* ==================== Spin Line ==================== */
+	.spin-line {
+		> div {
+			position: absolute;
+			animation: spin-line 1s infinite linear;
+			&:nth-child(1) { @include tblr-cust((top, 40px), (left, 67px)); }
+			&:nth-child(2) {
+				@include tblr-cust((top, 45.93px), (right, 53.43px));
+				@include transform(rotate(45deg));
+				animation-delay: .1s;
+			}
+			&:nth-child(3) {
+				@include tblr-cust((top, 60px), (right, 47px));
+				@include transform(rotate(90deg));
+				animation-delay: .2s;
+			}
+			&:nth-child(4) {
+				@include tblr-cust((bottom, 45.93px), (right, 53.43px));
+				@include transform(rotate(135deg));
+				animation-delay: .3s;
+			}
+			&:nth-child(5) {
+				@include tblr-cust((bottom, 40px), (left, 67px));
+				animation-delay: .4s;
+			}
+			&:nth-child(6) {
+				@include tblr-cust((bottom, 45.93px), (left, 53.43px));
+				@include transform(rotate(45deg));
+				animation-delay: .5s;
+			}
+			&:nth-child(7) {
+				@include tblr-cust((top, 60px), (left, 47px));
+				@include transform(rotate(90deg));
+				animation-delay: .6s;
+			}
+			&:nth-child(8) {
+				@include tblr-cust((top, 45.93px), (left, 53.43px));
+				@include transform(rotate(135deg));
+				animation-delay: .7s;
+			}
+		}
+	}
+	/* ==================== END Spin Line ==================== */
+
+	/* ==================== Time Loader ==================== */
+	.time-loader > div:not(:required) {
+	  @include border-radius(100%);
+	  @include box-sizing(border-box);
+	  @include size(54px, 54px);
+	  @extend .vm;
+	  display: inline-block;
+	  text-indent: -9999px;
+	  border: 4px solid $blue_400;
+	  overflow: hidden;
+	  &:before,
+	  &:after {
+	  	@include tblr-cust((top, 20px), (left, 20px));
+		  @include border-radius(3px);
+		  @include transform-origin(3px, 3px);
+		  content: '';
+		  position: absolute;
+		  display: block;
+		  background: $blue_400;
+	  }
+	  &:before {
+		  @include size(6px, 26px);
+		  animation: time-loader 1250ms infinite linear;
+	  }
+	  &:after {
+	  	@include size(6px, 20px);
+		  animation: time-loader 15000ms infinite linear;
+	  }
+	}
+	/* ==================== END Time Loader ==================== */
+}
+
+.layermask {
+	@include size(100%, 100%);
+	@include tblr-cust((top, 0), (left, 0));
+	position: fixed;
+	background: rgba(255,255,255,.6);
+}

@@ -1,0 +1,43 @@
+.textfield {
+  @include box-sizing(border-box);
+  @include transition(0.4s);
+  display: inline-block;
+  vertical-align: middle;
+  height: 30px;
+  padding: 0 8px;
+  outline: 0;
+  &.textarea {
+    @include font(16px, 300);
+    @include transition(0s);
+  }
+  &.search {
+    padding: 0 5px 0 30px;
+    margin: 0;
+  }
+  &.datefield {
+    font-size: 13px;
+    line-height: 27px;
+    text-align: center;
+  }
+  &.select {
+    @include border-radius(0);
+    @include appearance(none);
+  }
+}
+
+.textfield {
+  background: none;
+  border: none;
+  border-bottom: solid 2px $grey_300;
+  color: $grey_700;
+  &[disabled] { @include opacity(70); }
+  &.focus, &:focus { border-bottom: solid 2px $blue_400; }
+  &.disabled {
+    color: $grey_500;
+    border-bottom-style: dotted;
+  }
+  &.field_with_errors {
+    color: $red_400;
+    border-bottom-color: $red_400;
+  }
+}

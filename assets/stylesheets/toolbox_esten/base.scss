@@ -1,0 +1,27 @@
+//
+// 1. Set default font
+// 2. Set default size, box-sizing, position, and margin of global container
+//
+a { color: $grey_700; }
+.norecord {
+  @include font(14px, 500);
+  padding: 100px 0;
+}
+body {
+	@include font(12px, 500);
+	font-family: $helvetica;
+	color: $grey_900;
+}
+.container {
+  @include size(100%, 100%);
+  @include box-sizing(border-box);
+  position: relative;
+  overflow: hidden;
+}
+.bodycontent {
+  @include box-sizing(border-box);
+  position: relative;
+  height: 100%;
+  padding: 40px 0 0;
+  overflow: auto;
+}

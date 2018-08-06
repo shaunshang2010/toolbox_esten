@@ -1,0 +1,35 @@
+.form {
+  @extend .section;
+  overflow: auto;
+  .form-head {
+    @extend .section-head;
+    padding: 20px 40px 10px;
+    h1 { margin: 0 auto 8px; }
+  }
+  .form-body {
+    @extend .section-body;
+    .field {
+      position: relative;
+      margin: 0 auto;
+      padding: 24px 0;
+      div.controls {
+        position: relative;
+        line-height: 30px;
+        padding: 0 8px;
+        .label_name {
+          @include line-height(100%, 30px);
+          @include font(18px, 200);
+          @include transition(0.2s);
+          display: inline-block;
+          color: $grey_500;
+        }
+        .textfield {
+          @include font(18px, 200);
+          font-family: $helvetica;
+          &.datefield { cursor: pointer; }
+        }
+      }
+      &.actions { padding: 16px 0; }
+    }
+  }
+}

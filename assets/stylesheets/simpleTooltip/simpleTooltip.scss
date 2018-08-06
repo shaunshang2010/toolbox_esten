@@ -1,0 +1,21 @@
+.tooltip {
+	@include border-radius(2px);
+	position: absolute;
+	display: block;
+	padding: 8px;
+	font-size: 12px;
+  line-height: 16px;
+}
+.simpletooltip:not(.no_i):after {
+  @extend .inline-middle;
+  @include border-radius(100%);
+  @include size(12px, 12px);
+  @include font(12px, 500);
+  content: "i";
+  line-height: 12px;
+  margin-left: 4px;
+  font-style: italic;
+  text-transform: lowercase;
+  text-align: center;
+  cursor: pointer;
+}

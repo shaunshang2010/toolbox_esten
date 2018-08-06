@@ -1,0 +1,54 @@
+.simpletextfield {
+  background: none;
+  border: none;
+  border-bottom: solid 2px $grey_300;
+  color: $grey_700;
+  &[disabled] { @include opacity(70); }
+  &.focus, &:focus {
+  	border-bottom: solid 2px $blue_400;
+  	color: $blue_400;
+  }
+}
+.simplelabel {
+  @include line-height(30px, 30px);
+  @include font(14px, 400);
+  @include tblr-cust((top, 0), (left, 0));
+  @include user-select(none);
+  @include transition(0.2s);
+  position: absolute;
+  padding: 0 8px;
+  margin: 0 4px;
+  text-transform: uppercase;
+  color: $grey_500;
+  &.focus, &.filled {
+    @include font(12px, 400);
+    top: -24px;
+  }
+  &.focus { color: $blue_400; }
+}
+.simplelabel_error {
+  display: none;
+  width: 100%;
+  line-height: 20px;
+  padding: 0 4px;
+  font-size: 11px;
+  color: $red_500;
+}
+
+.field_with_errors {
+  .simpletextfield {
+  	color: $red_500;
+  	border-bottom: solid 2px $red_500;
+  	&.focus, &:focus {
+	  	border-bottom: solid 2px $red_500;
+	  	color: $red_500;
+	  }
+  }
+  .simplelabel {
+  	color: $red_500;
+  	&.focus, &.filled {
+	    color: $red_500;
+	  }
+  }
+  .simplelabel_error { display: block; }
+}

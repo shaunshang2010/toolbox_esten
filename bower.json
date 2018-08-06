@@ -1,0 +1,26 @@
+{
+  "name": "toolbox_esten",
+  "homepage": "https://github.com/shaunshang2010/toolbox_esten",
+  "authors": "Shang Chuan Chuan",
+  "description": "",
+  "moduleType": "globals",
+  "main": "assets/stylesheets/_toolbox_esten.scss",
+  "keywords": [
+    "toolbox_esten",
+    "sass"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "lib",
+    "tasks",
+    "templates",
+    "test",
+    "*.gemspec",
+    "Rakefile",
+    "Gemfile"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.0"
+  }
+}

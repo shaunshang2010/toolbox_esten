@@ -1,0 +1,20 @@
+{
+    "name": "twbs/toolbox_esten",
+    "description": "",
+    "keywords": ["toolbox_esten", "css", "sass"],
+    "homepage": "https://github.com/shaunshang2010/toolbox_esten",
+    "authors": [
+        {
+            "name": "Shang Chuan Chuan"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/shaunshang2010/toolbox_esten/issues"
+    },
+    "license": "MIT",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.3.x-dev"
+        }
+    }
+}

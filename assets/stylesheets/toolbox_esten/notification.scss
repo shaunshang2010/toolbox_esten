@@ -1,0 +1,109 @@
+.notification_alert {
+  @include border-radius(4px);
+  padding: 15px;
+  line-height: 16px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  h4 {
+    margin-top: 0;
+    color: inherit;
+  }
+  a { color: $blue_500; }
+  &.alert-success {
+    color: $light_green_800;
+    background: $light_green_200;
+    border-color: $light_green_400;
+  }
+  &.alert-warning {
+    color: $yellow_800;
+    background: $yellow_100;
+    border-color: $yellow_400;
+    b { color: $yellow_800!important; }
+  }
+  &.alert-danger {
+    color: $red_800;
+    background: $red_100;
+    border-color: $red_400;
+  }
+  &.alert-info {
+    color: $light_blue_600;
+    background: $light_blue_100;
+    border-color: $light_blue_200;
+  }
+}
+
+.error-message {
+  position: relative;
+  padding: 16px 64px;
+  min-height: 30px;
+  h2 {
+    span { margin-left: 4px; }
+    > * {
+      display: inline-block;
+      vertical-align: baseline!important;
+    }
+    &:before { vertical-align: baseline; }
+  }
+  .close {
+    @include font(18px, 700);
+    @include tblr-cust((top, 20px), (right, 20px));
+    position: absolute;
+    display: block;
+  }
+  > *:not(.clear):not(.close) {
+    @extend .inline-baseline;
+    line-height: 40px;
+  }
+  &.normal {
+    @include box-shadows(inset 0 3px 7px $grey_500, inset 0 -1px 3px $grey_500);
+    background: $grey_300;
+    color: $grey_800;
+    .close {
+      &:hover { color: $grey_800;}
+    }
+  }
+  &.success {
+    @include box-shadows(inset 0 3px 7px $green_500, inset 0 -1px 3px $green_500);
+    background: $green_300;
+    color: $green_800;
+    .close {
+      color: $green_800;
+      &:hover { color: $green_800;}
+    }
+  }
+  &.warning {
+    @include box-shadows(inset 0 3px 7px $amber_500, inset 0 -1px 3px $amber_500);
+    background: $amber_300;
+    color: $amber_900;
+    .close {
+      color: $amber_900;
+      &:hover { color: $amber_900;}
+    }
+  }
+  &.alert {
+    @include box-shadows(inset 0 3px 7px $red_600, inset 0 -1px 3px $red_600);
+    background: $red_200;
+    color: $red_600;
+    .close {
+      color: $red_600;
+      &:hover { color: $red_600;}
+    }
+  }
+  &.temp {
+    @include tblr-cust((top, 10px), (right, 0));
+    position: fixed;
+    top: 10px;
+    right: 0;
+    padding: 16px 64px 16px 16px;
+    // z-index: index($z-index-ele, noti_temp);
+    .close {
+      @include tblr-cust((top, 20px), (right, 20px));
+      top: 23px;
+      right: 10px;
+    }
+    &.normal { @include box-shadow(0 1px 3px $grey_500); }
+    &.success { @include box-shadow(0 1px 3px $green_500); }
+    &.warning { @include box-shadow(0 1px 3px $amber_500); }
+    &.alert { @include box-shadow(0 1px 3px $red_600); }
+  }
+}

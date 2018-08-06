@@ -1,0 +1,22 @@
+.detail {
+  @extend .form;
+  .detail-head { @extend .section-head; }
+  .detail-body {
+    @extend .form-body;
+    .field {
+      padding: 16px 0;
+      div.controls {
+        .label_name {
+          @include line-height(100%, 20px);
+          @include font(12px, 400);
+          text-transform: uppercase;
+          color: $grey_500;
+        }
+        .detail_val {
+          @extend .textfield;
+          height: auto;
+        }
+      }
+    }
+  }
+}

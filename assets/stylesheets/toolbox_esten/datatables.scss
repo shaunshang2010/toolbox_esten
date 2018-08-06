@@ -1,0 +1,113 @@
+.dataTables_empty {
+  vertical-align: middle;
+  text-align: center;
+  color: $grey_500;
+}
+.dataTables_wrapper {
+  .dataTables_paginate {
+    float: right;
+    text-align: right;
+    padding-top: 0.25em;
+    .paginate_button {
+      @include box-sizing(border-box);
+      display: inline-block;
+      min-width: 1.5em;
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      text-align: center;
+      text-decoration: none!important;
+      border: solid 1px $grey_300;
+      color: $grey_700!important;
+      cursor: pointer;
+      *cursor: hand;
+      &.current,
+      &.current:hover {
+        background: $grey_300;
+      }
+      &.disabled,
+      &.disabled:hover,
+      &.disabled:active {
+        @include box-shadow(none);
+        border: solid 1px transparent;
+        color: #666666!important;
+        background: transparent;
+        cursor: default;
+      }
+      &:hover {
+        color: #FFFFFF!important;
+        background: $grey_400;
+      }
+      &:active {
+        @include box-shadow(inset 0 0 3px #111111);
+        background: #2B2B2B;
+        outline: none;
+      }
+    }
+  }
+}
+// table.dataTable {
+//   thead {
+//     .sorting_asc,
+//     .sorting_desc,
+//     .sorting {
+//       position: relative;
+//       cursor: pointer;
+//       *cursor: hand;
+//     }
+//     .sorting {
+//       overflow: hidden;
+//       &:before, &:after {
+//         @extend .vm;
+//         @include size(0, 0);
+//         display: block;
+//         content: "";
+//         left: auto;
+//         right: 10px;
+//         border: solid 4px transparent;
+//       }
+//       &:before {
+//         top: 11px;
+//         bottom: auto;
+//         border-top: 0;
+//         border-bottom-color: $grey_500;
+//       }
+//       &:after {
+//         top: auto;
+//         bottom: 11px;
+//         border-bottom: 0;
+//         border-top-color: $grey_500;
+//       }
+//     }
+//     .sorting_asc,
+//     .sorting_desc,
+//     .sorting_asc_disabled,
+//     .sorting_desc_disabled {
+//       position: relative;
+//       &:after {
+//         @extend .vm;
+//         @include size(0, 0);
+//         display: block;
+//         content: "";
+//         left: auto;
+//         right: 10px;
+//         border: solid 4px transparent;
+//       }
+//     }
+//     .sorting_asc:after,
+//     .sorting_asc_disabled:after {
+//       top: auto;
+//       bottom: 11px;
+//       border-bottom: 0;
+//     }
+//     .sorting_desc:after,
+//     .sorting_desc_disabled:after {
+//       top: 11px;
+//       bottom: auto;
+//       border-top: 0;
+//     }
+//     .sorting_asc:after { border-top-color: $grey_500; }
+//     .sorting_desc:after { border-bottom-color: $grey_500; }
+//     .sorting_asc_disabled:after { border-top-color: $grey_300; }
+//     .sorting_desc_disabled:after { border-bottom-color: $grey_300; }
+//   }
+// }

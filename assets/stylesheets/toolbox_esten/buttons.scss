@@ -1,0 +1,162 @@
+.caret {
+  border-style: solid;
+  border-width: 4px;
+  border-color: transparent;
+  float: none!important;
+}
+@each $dir in 'up', 'down', 'left', 'right' {
+  .caret.#{$dir} {
+    border-#{position(#{$dir})}-width: 0;
+    border-#{opposite-position(#{$dir})}-color: $grey_600;
+  }
+}
+
+//Structure
+.btn {
+  @include line-height(30px, 30px);
+  @include box-sizing(border-box);
+  @include transition(0.3s);
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  min-width: 30px;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  &.flat,
+  &.square {
+    @include border-radius(2px);
+    @include font(12px, 400);
+    height: 30px;
+    padding: 0 8px;
+    text-transform: uppercase;
+  }
+  &.circle {
+    @include border-radius(100%);
+    @include size(30px, 30px);
+    &[class^="icon-"]:before,
+    &[class*="icon-"]:before {
+      @include font(16px, 400);
+      float: none;
+      vertical-align: top;
+      margin: 0;
+    }
+  }
+  &[class^="icon-"]:before,
+  &[class*="icon-"]:before {
+    float: left;
+    line-height: 29px;
+    margin: 0 4px 0 0;
+  }
+  input[type="button"] {
+    @extend .vm;
+    @include size(100%, 100%);
+    @include tblr-cust((left, 0), (top, 0));
+    @include opacity(0);
+    border: none;
+    cursor: pointer;
+  }
+  &.btn-mini {
+    @include line-height(20px, 20px);
+  }
+}
+
+
+//Theme
+.btn {
+  &.flat {
+    color: #FFFFFF;
+    background: transparent;
+    @each $dir in 'up', 'down', 'left', 'right' {
+      .caret.#{$dir} {
+        border-#{opposite-position(#{$dir})}-color: #FFFFFF;
+      }
+    }
+    &.normal {
+      color: $grey_500;
+      &:hover { background: $grey_500; }
+      @each $dir in 'up', 'down', 'left', 'right' {
+        .caret.#{$dir} {
+          border-#{opposite-position(#{$dir})}-color: $grey_500;
+        }
+      }
+    }
+    &.alert {
+      color: $deep_orange_400;
+      &:hover { background: $deep_orange_400; }
+      @each $dir in 'up', 'down', 'left', 'right' {
+        .caret.#{$dir} {
+          border-#{opposite-position(#{$dir})}-color: $deep_orange_400;
+        }
+      }
+    }
+    &.success { color: $light_green_400; }
+    &.warning { color: $yellow_600; }
+    &.info {
+      color: $blue_400;
+      &:hover { background: $blue_400; }
+      @each $dir in 'up', 'down', 'left', 'right' {
+        .caret.#{$dir} {
+          border-#{opposite-position(#{$dir})}-color: $blue_400;
+        }
+      }
+    }
+    &:hover {
+      color: #FFFFFF;
+      @each $dir in 'up', 'down', 'left', 'right' {
+        .caret.#{$dir} {
+          border-#{opposite-position(#{$dir})}-color: #FFFFFF;
+        }
+      }
+    }
+  }
+  &.square {
+    @each $dir in 'up', 'down', 'left', 'right' {
+      .caret.#{$dir} {
+        border-#{opposite-position(#{$dir})}-color: #FFFFFF;
+      }
+    }
+  }
+  &.square,
+  &.circle {
+    @include box-shadow(0 1px 2px $grey_300);
+    &.normal {
+      color: $grey_600;
+      background: #FFFFFF;
+      border: solid 1px $grey_300;
+      &:hover { background: #FFFFFF; }
+    }
+    &.alert {
+      color: #FFFFFF;
+      background: $deep_orange_400;
+      border: solid 1px $deep_orange_400;
+      &:hover { background: $deep_orange_600; }
+    }
+    &.success {
+      color: #FFFFFF;
+      background: $light_green_400;
+      border: solid 1px $light_green_400;
+      &:hover { background: $light_green_600; }
+    }
+    &.warning {
+      color: #FFFFFF;
+      background: $yellow_600;
+      border: solid 1px $yellow_600;
+      &:hover { background: $yellow_600; }
+    }
+    &.info {
+      color: #FFFFFF;
+      background: $blue_400;
+      border: solid 1px $blue_400;
+      &:hover { background: $blue_600; }
+    }
+    &[disabled],
+    &.disabled {
+      color: $grey_400!important;
+      background: $grey_200!important;
+      border: solid 1px $grey_200!important;
+      cursor: not-allowed;
+      &:hover { background: $grey_300; }
+    }
+  }
+}

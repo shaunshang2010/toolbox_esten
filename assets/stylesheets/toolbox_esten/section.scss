@@ -1,0 +1,53 @@
+.section {
+  .section-head {
+    padding: 20px 40px;
+    > *:not(.clear) { @include line-height(30px, 30px); }
+    h1,
+    > h2 {
+      @include text-overflow();
+      @include box-sizing(border-box);
+      span { @extend .inline-top; }
+      &[class^="icon-"]:before,
+      &[class*=" icon-"]:before {
+        @extend .inline-top;
+        @include line-height(40px, 40px);
+        @include font(24px, 300);
+        margin-right: 8px;
+      }
+    }
+    h1 { @include font(24px, 300); }
+    > h2 { @include font(16px, 600); }
+    .controls {
+      > li {
+        @extend .inline-top;
+        margin: 0 4px;
+        .btn {
+          @include line-height(30px, 30px);
+          display: inline-block;
+          vertical-align: middle;
+          &.flat {
+            color: #FFFFFF;
+            &.normal:hover { background: #FFFFFF; }
+          }
+          &.circle {
+            width: 40px;
+            &[class^="icon-"]:before,
+            &[class*=" icon-"]:before {
+              @extend .inline-top;
+            }
+          }
+          &[class^="icon-"]:before,
+          &[class*=" icon-"]:before {
+            line-height: 30px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .section-body {
+    min-height: 50px;
+    padding: 10px 8px;
+    overflow: hidden;
+  }
+}
